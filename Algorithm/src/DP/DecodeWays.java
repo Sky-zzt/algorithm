@@ -26,12 +26,9 @@ decodeways(new String("12"));
                 t=(s[i-2]-'0')*10+(s[i-1]-'0');
                 if (t>=10&&t<=26){
                     f[i]+=f[i-2];
-
                 }
             }
-
         }
-
         return f[n];
     }
 }

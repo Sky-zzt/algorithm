@@ -108,10 +108,10 @@ public class LRU {
 
         }
    public static class mycache<K,V>{
-        private HashMap<K,Node<V>> keynode;
+        private final HashMap<K,Node<V>> keynode;
         private NodeDoubleLinkedList nodelist;
-        private HashMap<Node<V>,K> nodekey;
-        private int capacity;
+        private final HashMap<Node<V>,K> nodekey;
+        private final int capacity;
 
         public mycache(int capacity){
             if (capacity<1){

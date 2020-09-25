@@ -5,7 +5,7 @@ public class 位运算 {
 //        int a=1;
 //        System.out.println(a<<10);
 
-        int number = NumberOf1_low(-2147483648);
+        int number = NumberOf1_low(2);
         System.out.println(number);
 
     }

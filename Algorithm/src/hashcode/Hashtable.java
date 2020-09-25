@@ -1,11 +1,11 @@
 package hashcode;
 
-import org.jetbrains.annotations.NotNull;
+
 
 public class Hashtable {
       private Student [] data =new Student[100];
 
-      public static void add(@NotNull Student student){
+      public static void add(Student student){
           System.out.println("fdfd");
         int index=student.hashcode();
       //    data[index]=student;

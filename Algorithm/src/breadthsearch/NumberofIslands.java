@@ -41,7 +41,7 @@ public class NumberofIslands {
             Queue<Coordinate> queue = new LinkedList<>();
             queue.offer(new Coordinate(x,y));
             grid[x][y]=false;
-            while (queue!=null){
+            while (!queue.isEmpty()){
                 Coordinate coor = queue.poll();
                 for (int i = 0; i < 4; i++) {
                     Coordinate adj = new Coordinate(coor.x + directionX[i],

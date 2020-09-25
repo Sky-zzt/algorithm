@@ -23,6 +23,9 @@ public class treeset {
         treeMap.put(5,'g');
         treeMap.put(6,'t');
         treeMap.firstKey();
+
+
+
         Map.Entry<Object, Object> ceilingEntry = treeMap.ceilingEntry(1);
         System.out.println(ceilingEntry);
         System.out.println(treeMap.containsKey(1));
