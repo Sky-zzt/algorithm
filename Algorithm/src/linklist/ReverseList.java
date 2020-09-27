@@ -63,12 +63,12 @@ public class ReverseList {
     }
 
     public static Node twotworeverse(Node head) {
-Node next=null;
+        Node next = null;
         while (head != null && head.next != null && head.next.next != null) {
-           next=head.next.next;
-           head.next.next=head;
-           head.next=next;
-           head=next;
+            next = head.next.next;
+            head.next.next = head;
+            head.next = next;
+            head = next;
         }
         return null;
 
@@ -123,24 +123,24 @@ Node next=null;
     }
 
     public static Node re(Node head, int m, int n) {
-        int mm=m;
+        int mm = m;
         Node head3 = head;
-        if (m==1){
+        if (m == 1) {
             //需要考虑两个边界
         }
-        while (m - 2> 0) {
+        while (m - 2 > 0) {
             head = head.next;
             m--;
         }
         Node head1 = head;
-        int h = n-mm+1;
+        int h = n - mm + 1;
         while (h > 0) {
             head = head.next;
             h--;
         }
         Node head2 = head;
-         Node next1=head1.next;
-         head1.next=null;
+        Node next1 = head1.next;
+        head1.next = null;
         Node next2 = head2.next;
         head2.next = null;
         Node reverseList = reverseList(next1);
@@ -154,98 +154,103 @@ Node next=null;
         reverseList.next = next2;
         return head1;
     }
-    public static Node reverse(Node head){
-        Node pre=null;
-        Node next=null;
-        while (head!=null){
-         //  pre=head;
-           next=head.next;
-            head.next=pre;
-            pre=head;
-            head=next;
+
+    public static Node reverse(Node head) {
+        Node pre = null;
+        Node next = null;
+        while (head != null) {
+            //  pre=head;
+            next = head.next;
+            head.next = pre;
+            pre = head;
+            head = next;
 
 
         }
         return pre;
     }
-    public static Node deletenode(Node head,int K){
-        if (head==null){
+
+    public static Node deletenode(Node head, int K) {
+        if (head == null) {
             return null;
         }
         Node dummy = new Node(0);
-        dummy.next=head;
-        Node prenode=null;
-       while (dummy.value!=K){
-          prenode=dummy;
-           dummy=dummy.next;
-       }
-       prenode.next=dummy.next;
+        dummy.next = head;
+        Node prenode = null;
+        while (dummy.value != K) {
+            prenode = dummy;
+            dummy = dummy.next;
+        }
+        prenode.next = dummy.next;
         return dummy.next;
     }
-    public static  Node swapPairs(Node head) {
+
+    public static Node swapPairs(Node head) {
         //递归出口
-        if(head == null || head.next == null)
+        if (head == null || head.next == null)
             return head;
         //每组相邻节点的第二个节点
         Node newNode = head.next;
         //每组相邻节点的第一个节点的next指针指向下一组已反转的第一个节点
         Node swapPairs = swapPairs(head.next.next);
-        head.next=swapPairs;
+        head.next = swapPairs;
         //每组相邻节点的第二个节点的next指针指向改组的第一个节点
         newNode.next = head;
         return newNode;
     }
-    public static  Node swapPairs1(Node head,Node next ) {
+
+    public static Node swapPairs1(Node head, Node next) {
 
         //Node next=null;
-        if (head.next==null||head.next.next==null){
+        if (head.next == null || head.next.next == null) {
             return head;
         }
-        next=head.next.next;
-        head.next.next=head;
-        head.next=swapPairs1(next,next);
-        head=next;
+        next = head.next.next;
+        head.next.next = head;
+        head.next = swapPairs1(next, next);
+        head = next;
         return head;
 
     }
 
     /**
      * 长达200字的递归笔记在此等你
+     *
      * @param head
      * @return
      */
-    public static Node reverseByrecursion(Node head){
-        if (head==null||head.next==null){
+    public static Node reverseByrecursion(Node head) {
+        if (head == null || head.next == null) {
             return head;
         }
         Node swapparis = reverseByrecursion(head.next);
-        head.next.next=head;
-        head.next=null;
-       //swapparis.next.next=swapparis;
-       //swapparis.next=null;
+        head.next.next = head;
+        head.next = null;
+        //swapparis.next.next=swapparis;
+        //swapparis.next=null;
         return swapparis;
 
 
     }
- 
+
 
     public static void main(String[] args) {
         Node head1 = new Node(1);
         head1.next = new Node(2);
-  //    head1.next.next.next = new Node(4);
-    //    head1.next.next.next.next = new Node(5);
-     //  head1.next.next.next.next.next = new Node(6);
+        //    head1.next.next.next = new Node(4);
+        //    head1.next.next.next.next = new Node(5);
+        //  head1.next.next.next.next.next = new Node(6);
         printLinkedList(head1);
         printLinkedList(swapPairs(head1));
-       //printLinkedList(reverse(head1));
- //    printLinkedList(twotworeverse(head1));
-      //  Node node = new Node(0);
-     //   printLinkedList(swapPairs1(head1,node));
+        //printLinkedList(reverse(head1));
+        //    printLinkedList(twotworeverse(head1));
+        //  Node node = new Node(0);
+        //   printLinkedList(swapPairs1(head1,node));
 
-       // printLinkedList(deletenode(head1,1));
-       // Node head = re(head1, 1, 4);
+        // printLinkedList(deletenode(head1,1));
+        // Node head = re(head1, 1, 4);
         // head1 = reverseList(head1);
-       // printLinkedList(head1);
+        // printLinkedList(head1);
 
 //		DoubleNode head2 = new DoubleNode(1);
 //		head2.next = new DoubleNode(2);
@@ -263,42 +268,43 @@ Node next=null;
 /*\
 下面这个head1 始终没变 死循环
  */
-        if (head1==null||head1.next==null||head1.next.next==null){
+        if (head1 == null || head1.next == null || head1.next.next == null) {
             return head1;
         }
         Node newNode = head1;
-        head1.next.next=newNode;//成环了
+        head1.next.next = newNode;//成环了
         Node swapparis = swapparisanExampleOfWrong(head1.next.next);
 
-        head1.next=null;
+        head1.next = null;
         return swapparis;
     }
+
     public static Node swapparis(Node head1) {
 
-        if (head1==null||head1.next==null||head1.next.next==null){
+        if (head1 == null || head1.next == null || head1.next.next == null) {
             return head1;
         }
         Node newNode = head1.next;
-       // head1.next.next=newNode;
+        // head1.next.next=newNode;
         Node swapparis = swapparis(head1.next.next);
 
 
-        head1.next=null;
+        head1.next = null;
         return swapparis;
     }
 
-    public static void reverseDouble(DoubleNode head){
-        if (head==null){
+    public static void reverseDouble(DoubleNode head) {
+        if (head == null) {
             return;
         }
-        DoubleNode pre=null;
-        DoubleNode next=null;
-        while (head!=null){
-            next=head.next;
-            head.next=pre;
-            head.pre=next;
-            pre=head;
-            head=next;
+        DoubleNode pre = null;
+        DoubleNode next = null;
+        while (head != null) {
+            next = head.next;
+            head.next = pre;
+            head.pre = next;
+            pre = head;
+            head = next;
         }
 
 

@@ -1,5 +1,7 @@
 package recuriondivide;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Findbigsmall {
@@ -56,6 +58,9 @@ public class Findbigsmall {
         int array[] = {-2, 9, 1, -4, 6};
         int[] Max = new int[1];  //java对于实参传递，是采用值传递，所以要改成数组，不能直接使用变量去计算最大值和最小值。
         int[] Min = new int[1];
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
 
         new Findbigsmall().max_min(array, 0, array.length - 1, Max, Min);
 

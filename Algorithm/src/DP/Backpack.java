@@ -3,6 +3,7 @@ package DP;
 public class Backpack {
     public static void main(String[] args) {
 
+        System.out.println(backpack(new int[]{3, 4, 8, 5}, 10));
     }
 
     public static int backpack(int arr[], int K) {

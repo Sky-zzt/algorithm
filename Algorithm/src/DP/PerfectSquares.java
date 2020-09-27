@@ -2,6 +2,7 @@ package DP;
 
 public class PerfectSquares {
     public static void main(String[] args) {
+        System.out.println(Perfectsquares(10000000));
 
     }
     public static int Perfectsquares(int n){

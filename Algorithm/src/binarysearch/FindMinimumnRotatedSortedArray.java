@@ -11,7 +11,8 @@ public class FindMinimumnRotatedSortedArray {
 其余向右移动即可，返回start和end位置上较小值即可
 
 因为这是个旋转排序数组，所以第一个小于最右边的值，一定是最小值。而找到这个最小值的方法就是利用二分法，
-把最右边的值设成target，1.如果med的值大于最右边，则说明我们要找的值在med右边，所以start=med；
+把最右边的值设成target，
+1.如果med的值大于最右边，则说明我们要找的值在med右边，所以start=med；
 2.如果med的值小于最右边，则说明我们要找的值在med左边，所以end=med;
 3.如果med=最右边，个人感觉就无所谓了，因为这个不重复，所以你可以随便给一边，因为只会start和end肯定相邻了。
 
