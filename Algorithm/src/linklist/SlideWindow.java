@@ -35,49 +35,39 @@ public class SlideWindow {
             }
         }
         return res;
-
     }
 
     /*
     //双向队列
   头 大      小 尾
      */
-    public static List<Integer> maxSlidingWindow(int[] nums, int k) {
-     //   LinkedList<Integer> qmax = new LinkedList<>();
-        ArrayList<Integer> qmax = new ArrayList<>();
-        qmax.add(Integer.MIN_VALUE);
-        int low = 0;
-        int high = 0;
-
-        while (high+k<nums.length-1){
-
-
+    public List<Integer> maxSlidingWindow(int[] nums, int k) {
+        // write your code here
+        List<Integer> res = new ArrayList<>();
+        if (nums == null || nums.length == 0 || k < 0) {
+            return null;
         }
-
-
-
-
-
-        for (int i = low; i < high + k; i++) {
-            if (qmax.get(qmax.size()-1) <= nums[i]) {
-                qmax.remove(qmax.size()-1);
-                qmax.add(nums[i]);
-            } else {
-                qmax.add(nums[i]);
+        LinkedList<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
+            //queue.add(i);
+            while (!queue.isEmpty() && nums[queue.peekLast()] < nums[i]) {
+                queue.pollLast();
             }
-            low++;
-            high++;
-            if (high+k>nums.length-1){
-                break;
+            queue.add(i);
+
+            if (i - queue.peekFirst() == k) {
+                queue.pollFirst();
+            }
+            if (i >= k - 1) {
+                res.add(nums[queue.peekFirst()]);
             }
         }
-
-return qmax;
+        return res;
     }
 
     public static void main(String[] args) {
         int[] ints = {1, 2, 7, 7, 8};
-        List<Integer> list = maxSlidingWindow(ints, 3);
-        list.forEach(aa-> System.out.println(aa));
+        //   List<Integer> list = maxSlidingWindow(ints, 3);
+        // list.forEach(aa -> System.out.println(aa));
     }
 }
