@@ -75,7 +75,7 @@ public class WordLadder {
         strings.add("dog");
         strings.add("lot");
         strings.add("log");
-        wordLadder.ladderLength("hit", "cog", strings);
+        System.out.println(wordLadder.ladderLength("hit", "cog", strings));
 
     }
 

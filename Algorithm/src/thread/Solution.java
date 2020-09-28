@@ -45,5 +45,7 @@ public class Solution {
 
     public static void main(String[] args) {
         new Solution().combinationSum(new int[]{2,3,6,7},7);
+        System.out.println("sausage ");
     }
+
 }
