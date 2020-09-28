@@ -68,8 +68,8 @@ public class TrieTree {
 			char[] chs = word.toCharArray();
 			TrieNode node = root;
 			int index = 0;
-			for (int i = 0; i < chs.length; i++) {
-				index = chs[i] - 'a';
+			for (char ch : chs) {
+				index = ch - 'a';
 				if (node.nexts[index] == null) {
 					return 0;
 				}
