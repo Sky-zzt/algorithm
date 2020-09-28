@@ -27,5 +27,8 @@ public class Code_02_DFS {
 			}
 		}
 	}
+	public static void dfs2(Node node){
+
+	}
 
 }
