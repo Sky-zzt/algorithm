@@ -1,6 +1,7 @@
 package binarysearch;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.PriorityQueue;
 
 public class UglyNumberII {
@@ -17,26 +18,26 @@ public class UglyNumberII {
             return -1;
         }
         Long[] primes = new Long[3];
-        primes[0] = Long.valueOf(2);
-        primes[1] = Long.valueOf(3);
-        primes[2] = Long.valueOf(5);
+        primes[0] = 2L;
+        primes[1] = 3L;
+        primes[2] = 5L;
         PriorityQueue<Long> priorityQueue = new PriorityQueue<Long>();
         HashSet<Long> set = new HashSet<>();
-        for (int j = 0; j < primes.length; j++) {
-            priorityQueue.offer(primes[j]);
-            set.add(primes[j]);
+        for (Long prime : primes) {
+            priorityQueue.offer(prime);
+            set.add(prime);
         }
-        Long number = Long.valueOf(1);
+        Long number = 1L;
         for (int i = 1; i < n; i++) {
             number = priorityQueue.poll();
-            for (int j = 0; j < primes.length; j++) {
-                if (!set.contains(primes[j] * number)) {
-                    priorityQueue.offer(primes[j] * number);
-                    set.add(primes[j] * number);
+            for (Long prime : primes) {
+                if (!set.contains(prime * number)) {
+                    priorityQueue.offer(prime * number);
+                    set.add(prime * number);
                 }
             }
         }
-        return priorityQueue.poll().intValue();
+        return Objects.requireNonNull(priorityQueue.poll()).intValue();
 
     }
 

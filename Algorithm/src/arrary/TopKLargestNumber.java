@@ -13,7 +13,7 @@ public class TopKLargestNumber {
         }
         return quickSelect(nums, 0, nums.length - 1, nums.length - n); //这个第一大是真的第一大
     }
-    public static int quickSelect(int arr[], int l, int r, int K) { //这个第0大才是第一大 第n-1大才是第n大
+    public static int quickSelect(int[] arr, int l, int r, int K) { //这个第0大才是第一大 第n-1大才是第n大
         int[] p = partition(arr, l, r, arr[l + (int) (Math.random() * (r - l + 1))]);
         if (l + K <= p[0]) {
             return quickSelect(arr, l, p[0], K);

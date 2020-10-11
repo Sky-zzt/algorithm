@@ -74,7 +74,7 @@ public class MergeKSortedLists {
         Node dummy = new Node(0);
         Node tail = dummy;
 
-        while (heap != null) {
+        while (heap.size()!=0) {
             Node head = heap.poll();
             tail.next = head;
             tail = head;

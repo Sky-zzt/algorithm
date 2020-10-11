@@ -192,8 +192,7 @@ public class ReverseList {
         //每组相邻节点的第二个节点
         Node newNode = head.next;
         //每组相邻节点的第一个节点的next指针指向下一组已反转的第一个节点
-        Node swapPairs = swapPairs(head.next.next);
-        head.next = swapPairs;
+        head.next = swapPairs(head.next.next);
         //每组相邻节点的第二个节点的next指针指向改组的第一个节点
         newNode.next = head;
         return newNode;
