@@ -1,9 +1,6 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTreeLevelOrderTraversal {
     public static class Node {
@@ -28,10 +25,10 @@ public class BinaryTreeLevelOrderTraversal {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 System.out.println(queue.poll().value);
-                if (root.left!=null){
+                if (root.left != null) {
                     queue.add(root.left);
                 }
-                if (root.right!=null){
+                if (root.right != null) {
                     queue.add(root.right);
                 }
             }
@@ -39,7 +36,8 @@ public class BinaryTreeLevelOrderTraversal {
         }
 
     }
-////模板样例
+
+    ////模板样例
 //        //若不需要分层输出  去掉for循环   加for只是为了输出的时候分层  正常的进队出队 加不加for没有区别
     public static List<List<Integer>> levelOrder(Node root) {
         List result = new ArrayList();
@@ -82,9 +80,33 @@ public class BinaryTreeLevelOrderTraversal {
         for (int i = 0; i < lists.size(); i++) {
             System.out.println(lists.get(i));
         }
+        predfs(head);
 
 
     }
+
+    public static void predfs(Node head) {
+            System.out.println(head.value);
+        Stack<Node> stack = new Stack<>();
+        stack.push(head);
+        while (stack.isEmpty()) {
+            Node cur = stack.pop();
+            while (cur != null) {
+                System.out.println(cur.value);
+                stack.push(cur);
+                cur = cur.left;
+            }
+            //   Node pop = stack.pop();
+            while (stack.isEmpty()) {
+                Node pop = stack.pop();
+                if (pop.right != null) {
+                    System.out.println(pop.right.value);
+                }
+            }
+
+        }
+    }
+
     public static List<Integer> levelOrder1(Node root) {
         List result = new ArrayList();
 
@@ -97,19 +119,19 @@ public class BinaryTreeLevelOrderTraversal {
         ArrayList<Integer> level = new ArrayList<Integer>();
 
         while (!queue.isEmpty()) {
-        //   ArrayList<Integer> level = new ArrayList<Integer>();
+            //   ArrayList<Integer> level = new ArrayList<Integer>();
             //int size = queue.size();
-           // for (int i = 0; i < size; i++) {
-                Node head = queue.poll();
-                level.add(head.value);
-                if (head.left != null) {
-                    queue.offer(head.left);
-                }
-                if (head.right != null) {
-                    queue.offer(head.right);
-                }
-        //    }
-        //    result.add(level);
+            // for (int i = 0; i < size; i++) {
+            Node head = queue.poll();
+            level.add(head.value);
+            if (head.left != null) {
+                queue.offer(head.left);
+            }
+            if (head.right != null) {
+                queue.offer(head.right);
+            }
+            //    }
+            //    result.add(level);
         }
 
         return level;

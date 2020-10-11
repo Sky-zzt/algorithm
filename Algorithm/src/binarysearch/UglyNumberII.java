@@ -17,7 +17,7 @@ public class UglyNumberII {
         if (n < 1) {
             return -1;
         }
-        Long[] primes = new Long[3];
+        long[] primes = new long[3];
         primes[0] = 2L;
         primes[1] = 3L;
         primes[2] = 5L;
