@@ -30,7 +30,7 @@ public class MaxPathSum {
    想明白这个递归要干啥 他要收集啥信息
     */
     public static int rootToany(Node root) {  //他要收集每个节点开始的pathsum
-        if (root == null) {
+        if (root == null) {  //  如果要求是叶子节点结束的话，需要加 root.left==null and root.right==null
             return 0;
         }
         int left = rootToany(root.left);
