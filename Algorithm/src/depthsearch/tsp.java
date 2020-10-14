@@ -45,6 +45,7 @@ public class tsp {
         }
         if (curDis >= res)
             return;
+        // 这个dfs 在每个点 都有n种选择  类比棋盘上的搜索 ，每个点都有上下左右四种选择
         for (int i = 0; i < n; i++) {
             if (curCity == i)  //todo 这个if可以让他返回起点（但是 你不debug 还真看不出来）   一个更好理解的做法是，不让他返回 当step==n是 加上起点到终点的距离不就行了 https://www.jiuzhang.com/problem/travel-plan/
                 continue;
