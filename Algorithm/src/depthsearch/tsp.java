@@ -26,6 +26,7 @@ n<=10 arr[i][j]<=10000
 public class tsp {
     static int res;
 
+    //画一下 dfs 深度搜索的图  你会理解更多
     public int travelPlanII(int[][] arr) {
         // Write your code here.
         res = Integer.MAX_VALUE;
@@ -45,7 +46,7 @@ public class tsp {
         if (curDis >= res)
             return;
         for (int i = 0; i < n; i++) {
-            if (curCity == i)
+            if (curCity == i)  //todo 这个if可以让他返回起点（但是 你不debug 还真看不出来）   一个更好理解的做法是，不让他返回 当step==n是 加上起点到终点的距离不就行了 https://www.jiuzhang.com/problem/travel-plan/
                 continue;
             if (!visited[i]) {
                 visited[i] = true;
@@ -63,7 +64,7 @@ public class tsp {
         //有两种可能的方案。
         //第一种，城市0->城市1->城市2->城市0，cost=5。
         //第二种，城市0->城市2->城市1->城市0，cost=4。
-        int[][] ints = {{0,1,2},{1,0,2},{2,1,0}};
+        int[][] ints = {{0, 1, 2}, {1, 0, 2}, {2, 1, 0}};
         System.out.println(new tsp().travelPlanII(ints));
 
     }
