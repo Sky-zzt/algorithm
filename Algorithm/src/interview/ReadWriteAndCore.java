@@ -3,6 +3,7 @@ package interview;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.ServiceConfigurationError;
 
@@ -45,13 +46,11 @@ public class ReadWriteAndCore {
         }
         nameGruop = new ArrayList<>();
         //拆解每条信息的 变成名字组
-        for (int i = 0; i < info.length; i++) {
+        for (String item : info) {
             ArrayList<String> names = new ArrayList<>();
-            String[] split = info[i].split(",");
+            String[] split = item.split(",");
             String[] split1 = split[7].split("###");
-            for (int j = 0; j < split1.length; j++) {
-                names.add(split1[j]);
-            }
+            Collections.addAll(names, split1);
             names.add(split[2]);
             nameGruop.add(names);
         }
@@ -66,12 +65,12 @@ public class ReadWriteAndCore {
                 }
                 ArrayList<String> list2 = nameGruop.get(j);
                 flag = false;
-                for (int k = 0; k < list1.size(); k++) {
+                for (String value : list1) {
                     if (flag) {
                         break;
                     }
-                    for (int l = 0; l < list2.size(); l++) {
-                        if (list1.get(k).equals(list2.get(l))) {
+                    for (String s : list2) {
+                        if (value.equals(s)) {
                             flag = true;
                             //合并去重
                             Merge.mergeInfo2SameRows(i, j, info);
@@ -85,9 +84,7 @@ public class ReadWriteAndCore {
         System.out.println(a1-a);
         long l = System.currentTimeMillis();
         HashSet<String> set = new HashSet<>();
-        for (int i = 0; i < info.length; i++) {
-            set.add(info[i]);
-        }
+        Collections.addAll(set, info);
         FileWriter fw = new FileWriter("C:\\Users\\zzt\\Desktop\\a.csv");
         for (String s : set) {
             fw.write(s + "\n");

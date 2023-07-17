@@ -1,5 +1,6 @@
 package arrary;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MaxGap {
@@ -22,10 +23,11 @@ public class MaxGap {
         int[] ints = {1, 4, 9, 2, 5, 12, 34, 56, 100};
         int maxgap = maxgap(ints);
         System.out.println(maxgap);
+        System.out.println();
 
     }
-    public static int maxgap(int nums[]) {
-
+    public static int maxgap(int[] nums) {
+        ArrayList<Integer> integers = new ArrayList<>();
 
         if (nums == null || nums.length < 2) {
             return 0;
@@ -33,9 +35,9 @@ public class MaxGap {
         int len = nums.length;
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < len; i++) {
-            min = Math.min(min, nums[i]);
-            max = Math.max(max, nums[i]);
+        for (int num : nums) {
+            min = Math.min(min, num);
+            max = Math.max(max, num);
         }
         if (min == max) {
             return 0;

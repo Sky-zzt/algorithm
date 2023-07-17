@@ -34,6 +34,7 @@ public class Subsets {
         // 2. 递归的拆解
         // deep copy
         // results.add(subset);
+        
         results.add(new ArrayList<Integer>(subset));
 
         for (i = startIndex; i < nums.length; i++) {

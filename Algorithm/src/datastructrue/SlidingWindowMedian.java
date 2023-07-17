@@ -13,6 +13,11 @@ import java.util.TreeSet;
  * 总体时间复杂度 O(nlogk)O(nlogk)，n是元素个数，k 是 window 的大小。
  */
 public class SlidingWindowMedian {
+    public static void main(String[] args) {
+
+        TreeSet<Node> nodes = new TreeSet<>();
+
+    }
     public ArrayList<Integer> medianSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         TreeSet<Node> minheap = new TreeSet<Node>();
@@ -71,10 +76,9 @@ class Node implements Comparable<Node>{
         this.val = val;
     }
     public int compareTo(Node other) {
-        Node a =(Node)other;
-        if (this.val == a.val) {
-            return this.id - a.id;
+        if (this.val == ((Node)other).val) {
+            return this.id - ((Node)other).id;
         }
-        return this.val - a.val;
+        return this.val - ((Node)other).val;
     }
 }

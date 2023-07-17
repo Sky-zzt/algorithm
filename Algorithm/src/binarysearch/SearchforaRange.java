@@ -5,7 +5,7 @@ public class SearchforaRange {
      * 给定一个 排序数组nums (nums中有 重复 元素)与 目标值target ，如果
      * target在nums里 出现 ，则返回target所在区间的 左右端点下标 ，[左端点,
      * 右端点]，如果target在nums里 未出现 ，则返回[-1, -1]。
-     *
+     *BinarySearchFirstPositionofTarget 以及 最后一个位置 ，执行两次即可
      * @param args
      */
     public static void main(String[] args) {

@@ -136,12 +136,12 @@ heap就是完全二叉树
 //		printArray(arr);
 //		heapSort(arr);
 //		printArray(arr);
-		int[] ints = {4, 1, 11, 6, 2};
-		System.out.println(-1/2);
-		//heapSort(ints);
-		for (int i = 0; i <ints.length ; i++) {
-			heapInsert(ints,i);
-		}
+		int[] ints = {4, 1,2, 11, 6, 2};
+		//System.out.println(-1/2);
+		heapSort(ints);
+//		for (int i = 0; i <ints.length ; i++) {
+//			heapInsert(ints,i);
+//		}
 		System.out.println(Arrays.toString(ints));
 		//System.out.println();
 		//ClassLoader classloader = Load2.class.getClassLoader();

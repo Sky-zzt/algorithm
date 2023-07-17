@@ -1,7 +1,5 @@
 package arrary;
 
-import static arrary.FindNumAppearInTwoarrary.findNumAppearIntwoarrary;
-
 public class FindNumAppearInTwoarrary {
     public static void main(String[] args) {
         int[] arr = new int[]{11, 21, 31, 41, 51, 61, 71};//两个排好序的数组中都出现的数  找出b数组a中没出现的数也一样

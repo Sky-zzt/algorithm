@@ -2,6 +2,7 @@ package arrary;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.TreeSet;
 
 public class TwoSum {
 
@@ -22,6 +23,10 @@ public class TwoSum {
 两根指针可以避免 额外的空间复杂度
      */
     public static int[] twosum(int arr[], int target) {
+
+        TreeSet<Integer> integers = new TreeSet<>();
+
+        integers.first();
         Arrays.sort(arr);
         int begin = 0;
         int end = arr.length - 1;
