@@ -27,6 +27,7 @@ public class ZigZagPrintTree {
         zigzagLevelOrder1(head);
     }
 //很好的方法  和题目  建议下次 在写一遍
+    //也可以  层序遍历完之后，看层数，偶数层reverse一下即可。
 
     //体会 利用normalOrder  和交换stack的用法
     public static List<List<Integer>> zigzagLevelOrder(Node root) {
